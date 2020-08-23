@@ -1,0 +1,321 @@
+<style>
+  body{
+      padding: 0;
+      margin: 0;
+      background-color: #f2f2f2;
+      font-family: 'Roboto', sans-serif;
+  }
+  .form{
+      background-color: #f2f2f2;
+      height: 100%;
+      width: 100%;
+  }
+
+
+  .top-bar{
+      background-color: #272727;
+      color: #e8e8e8;
+      padding: 10px 0;
+      font-size: .9em;
+      box-shadow: 0px 2px 3px #999;
+  }
+  .top-bar ul.inline{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+  }
+  .top-bar ul.inline li{
+      display: inline;
+  }
+  .top-bar a{
+      color: #e2e2e2;
+      text-decoration: none;
+  }
+
+  .container{
+      width: 984px;
+      padding: 0 20px;
+      text-align: left;
+  }
+
+  .cards-container{
+      background-color: #fff;
+      padding: 15px 0;
+      border-bottom: 1px solid #dadada;
+  }
+
+
+  .inline{
+      display: inline;
+  }
+  .block{
+      display: block;
+  }
+  .inline-block{
+      display: inline-block;
+  }
+  .left{
+      float: left;
+  }
+  .right{
+      float: right;
+  }
+  .clear{
+      clear: both;
+  }
+  .tp-bg{
+      background-color: rgba(0,0,0,.5) !important;
+  }
+  .bg-orange{
+      background-color: #f36e21 !important;
+  }
+  .bg-grey{
+      background-color: #dadada !important;
+  }
+
+  .white-text{
+      color: #fff !important;
+  }
+
+  .padding-5{
+      padding: 5px;
+  }
+  .padding-10{
+      padding: 10px;
+  }
+  .padding-15{
+      padding: 15px;
+  }
+  .padding-20{
+      padding: 20px;
+  }
+  .padding-25{
+      padding: 25px;
+  }
+  .padding-30{
+      padding: 30px;
+  }
+  .no-padding{
+      padding: 0;
+  }
+  .no-margin{
+      margin: 0;
+  }
+
+  .gap-type-default{
+      height: .75em;
+  }
+  .gap-type-1{
+      height: 5px;
+  }
+  .gap-type-2{
+      height: 10px;
+  }
+  .gap-type-3{
+      height: 15px;
+  }
+  .gap-type-4{
+      height: 20px;
+  }
+
+  .login-container{
+      background-color: #fff;
+      box-shadow: 0px 2px 3px #0db7c4;
+      height: auto;
+      max-width: 400px;
+      min-width: 320px;
+      margin: 20px auto;
+      text-align: left;
+  }
+  .login-container .title{
+      padding: 15px;
+      background-color: #f85b5b;
+      color: #fff;
+      border-bottom: 1px solid #dadada;
+      border-radius: 5px;
+  }
+  .login-container .title h3{
+      font-weight: 300;
+      margin: 0;
+  }
+  .login-container table{
+      width: 100%;
+  }
+  .login-container .form-container{
+      padding: 40px 20px;
+  }
+  .login-container .form-container input[type=email]{
+      padding: 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      font-size: .8em;
+  }
+
+
+  .login-container .form-container input[type=password]{
+      padding: 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      font-size: .8em;
+  }
+
+  .login-container .form-container .select{
+      padding: 10px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      font-size: .8em;
+      
+  }
+  .login-container .form-container input[type=email]:hover{
+      border-color: #adadad;
+  }
+  .login-container .form-container input[type=email]:focus{
+      border-color: #4866af;
+  }
+  .login-container .form-container input[type=email]:focus{
+      border-color: #4866af;
+  }
+
+  .login-container .form-container input[type=password]:hover{
+      border-color: #adadad;
+  }
+  .login-container .form-container input[type=password]:focus{
+      border-color: #4866af;
+  }
+  .login-container .form-container input[type=password]:focus{
+      border-color: #4866af;
+  }
+  .login-container .form-container button[type=submit]{
+      background-color: #f36e21;
+      color: #fff;
+      border: 1px solid #f36e21;
+      padding: 10px 20px;
+      border-radius: 3px;
+      cursor: pointer;    
+  }
+
+  .login-container .form-container button[type=submit]:disabled{
+
+opacity: 0.4;
+
+}
+
+
+  .login-container .form-container a{
+      text-decoration: none;
+      color: #0db7c4;
+      font-size: .8em;
+  }
+  .login-container .form-container a:hover{
+      text-decoration: underline;
+      color: #f85b5b;
+  }
+  .notification{
+      padding: 10px 20px;
+      font-size: 14px;
+  }
+  .notification.success{
+      background-color: #21c465;
+      color: #ffffff;
+  }
+  .notification.error{
+      background-color: #ff4444;
+      color: #ffffff !important;
+      
+  }
+    .top-bar {
+background-color: #272727;
+color: #e8e8e8;
+padding: 5px 0;
+font-size: .9em;
+box-shadow: 0px 2px 3px #999;
+}
+</style>
+
+
+<app-header-component></app-header-component> 
+
+<div class="row">
+  <div class="col-xs-12 col-md-6 col-md-offset-3">
+    <div class="alert alert-danger" *ngIf="error">
+      <p>{{ error }}</p>
+    </div>
+    <div *ngIf="isLoading" style="text-align: center;">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+
+    <main *ngIf="!isLoading">
+      <table  style="width: 100%;">
+          <tr>
+              <td>
+                  <div class="login-container">
+                      <div class="title">
+                          <h3>
+                              <i class="fa fa-key fa-2x" style="margin-right: 12px;"></i><span style="font-size:20px;">
+                                  Login for Ministry </span>
+                          </h3>
+                      </div>
+                      <div class="form-container">
+
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <table>
+                                                                        
+        <tr>
+            <td>
+                <i class="fa fa-envelope"></i>
+            </td>
+            <td>
+                
+                <input type="email" name="email" ngModel id="loginid1" placeholder="Email"  email required />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <i class="fa fa-shield"></i>
+            </td>
+            <td>
+                <input type="password"  name="password" ngModel placeholder="Password..." id="pass1" required minlength="6"/>
+            </td>
+        </tr>
+
+       
+        
+        <tr>
+            <td></td>
+            <td>
+              <button
+              style="margin-right: 20px;"
+             
+              type="submit"
+              [disabled]="!authForm.valid"
+            ><i class="fa fa-paper-plane" style="margin-right: 10px;"></i>
+              {{ isLoginMode ? 'Login' : 'Sign Up' }}
+            </button>
+            
+            <button style="margin-right: 20px;" class="btn btn-primary" (click)="onSwitchMode()" type="button"> <i class="fa fa-paper-plane" style="margin-right: 10px;"></i>
+              Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+            </button>
+                  
+            </td>
+        </tr>
+        
+       
+      
+    </table>
+</form>
+</div>
+</div>
+</td>
+</tr>  
+</table>
+</main>
+  </div>
+</div>
+
+<app-footer-component></app-footer-component>
