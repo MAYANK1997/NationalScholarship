@@ -32,25 +32,18 @@ onSubmit(form:NgForm){
   }
 
   
-  const email = form.value.institute_email;
-  const password = form.value.institute_password;
-  const instituteCategory = form.value.institute_category;
-  const instituteName = form.value.institute_name;
-  const instituteDISECode = form.value.institute_dise_code;
-  const instituteType = form.value.institute_type;
-  const affiliatedUniversityName = form.value.institute_affiliated_university_name;
-  const affiliatedUniversityState = form.value.institute_affiliated_university_state;
-  const yearStarted = form.value.institute_year_started;
-  const instituteLoc = form.value.institute_address1;
-  const address = form.value.institute_address2;
-  const instituteCity = form.value.institute_city;
-  const instituteState = form.value.institute_state;
-  const institutePincode = form.value.institute_pincode;
-  const district = form.value.institute_district;
-  const principalName = form.value.institute_principal_name;
-  const mobileNumber = form.value.institute_contact_number;
-  const instituteEmail = form.value.institute_email;
- 
+  const email = form.value.student_email;
+  const password = form.value.student_password;
+  const studentName = form.value.student_name;
+  const studentDOB = form.value.student_dob;
+  const studentGender = form.value.gender;
+  const studentDistrict = form.value.student_district;
+  const studentMobileNo = form.value.student_contact_number;
+  const studentEmail = form.value.student_email;
+  const studentaadhar = form.value.student_aadhar_number;
+  const studentState = form.value.student_state;
+  
+  console.log(typeof studentDOB);
 
 
   let authObs: Observable<AuthResponseData>;
@@ -62,7 +55,7 @@ onSubmit(form:NgForm){
       console.log(email);
       authObs = this.authService.login(email, password);
     } else {
-      authObs = this.authService.signup(email, password, instituteCategory, instituteName, instituteDISECode, instituteType, affiliatedUniversityName, affiliatedUniversityState, yearStarted, instituteLoc, address, instituteCity, instituteState, institutePincode, district, principalName,mobileNumber,instituteEmail);
+      authObs = this.authService.signup(email, password, studentName, studentDOB, studentGender, studentDistrict, studentMobileNo, studentEmail, studentaadhar, studentState);
     }
 
     authObs.subscribe(

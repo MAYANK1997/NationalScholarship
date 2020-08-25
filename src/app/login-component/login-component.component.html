@@ -282,7 +282,7 @@
               </td>
               <td>
                   
-                  <input type="email" name="institute_email" ngModel id="loginid1" placeholder="Email"  email required />
+                  <input type="email" name="student_email" ngModel id="loginid1" placeholder="Email"  email required />
                   
               </td>
           </tr>
@@ -291,7 +291,7 @@
                   <i class="fa fa-shield"></i>
               </td>
               <td>
-                  <input type="password"  name="institute_password" ngModel placeholder="Password..." id="pass1" required minlength="6"/>
+                  <input type="password"  name="student_password" ngModel placeholder="Password..." id="pass1" required minlength="6"/>
               </td>
           </tr>
   
@@ -359,6 +359,7 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
+
 textarea,
 select {
   background: rgba(255,255,255,0.1);
@@ -467,7 +468,7 @@ label.light {
                 </h3>
               </div>
             
-      <form #authForm1="ngForm" (ngSubmit)="onSubmit(authForm1)" *ngIf="!isLoading"  class="aa">
+      <form #authForm4="ngForm" (ngSubmit)="onSubmit(authForm4)" *ngIf="!isLoading"  class="aa">
           
       
         
@@ -477,75 +478,38 @@ label.light {
           <label for="student_name">Student Name:</label>
           <input type="text" id="student_name" name="student_name" ngModel required> 
 
-          <label for="institute_email">Institute Email:</label>
-          <input type="email" id="institute_email" name="institute_email" ngModel required email>
+          <label for="student_dob">Student Date of Birth:</label>
+          <input type="date" id="student_dob" name="student_dob" ngModel required> 
+
+          <label for="student_email">Student Email:</label>
+          <input type="email" id="student_email" name="student_email" ngModel required email>
        
-          <label for="institute_password">Institute Password:</label>
-          <input type="password" id="institute_password" name="institute_password" ngModel required minlength="6">
+          <label for="student_password">Student Password:</label>
+          <input type="password" id="student_password" name="student_password" ngModel required minlength="6">
 
-          <label for="institute_dise_code">Institute DISE Code:</label>
-          <input type="text" id="institute_dise_code" name="institute_dise_code" ngModel required>
+          <label for="student_gender">Gender</label>
+          <select id="student_gender" name="student_gender" ngModel required>
+            
+              <option value="Male">Male</option>
+              <option value="">Female</option>
+              <option value="Autonomous">Others</option>
+              
+           
+            </select>
 
-          <label for="institute_year_started">Year Started:</label>
-          <input type="number" id="institute_year_started" name="institute_year_started" ngModel required maxlength="4" min="1500" max="2020">
-
-          <label for="institute_address1">Institute Address1:</label>
-          <input type="text" id="institute_address1" name="institute_address1" ngModel required>
-
-          <label for="institute_address2">Institute Address2:</label>
-          <input type="text" id="institute_address2" name="institute_address2" ngModel required>
-
-          <label for="institute_district">Institute District:</label>
-          <input type="text" id="institute_district" name="institute_district" ngModel required>
-
-          <label for="institute_city">Institute City:</label>
-          <input type="text" id="institute_city" name="institute_city" ngModel required>
-
-          <label for="institute_state">Institute State:</label>
-          <input type="text" id="institute_state" name="institute_state" ngModel required>
-
-          <label for="institute_pincode">Institute Pincode:</label>
-          <input type="number" id="institute_pincode" name="institute_pincode" ngModel required maxlength="6"> 
-
-          <label for="name">Affiliated University Name:</label>
-          <input type="text" id="institute_affiliated_university_name" name="institute_affiliated_university_name" ngModel required>
-
-          <label for="institute_affiliated_university_state">Affiliated University State:</label>
-          <input type="text" id="institute_affiliated_university_state" name="institute_affiliated_university_state" ngModel required>
         
-          <label for="institute_email">Institute Email:</label>
-          <input type="email" id="institute_email" name="institute_email" ngModel required email>
-       
-          <label for="institute_password">Institute Password:</label>
-          <input type="password" id="institute_password" name="institute_password" ngModel required minlength="6">
+            <label for="student_district">Student District:</label>
+            <input type="text" id="student_district" name="student_district" ngModel required>
 
-          <label for="institute_principal_name">Principal Name:</label>
-          <input type="text" id="institute_principal_name" name="institute_principal_name" ngModel required>
+            <label for="student_state">Student State:</label>
+            <input type="text" id="student_state" name="student_state" ngModel required>
 
-          <label for="institute_contact_number">Contact Number: </label>
-          <input type="tel" id="institute_contact_number" name="institute_contact_number" ngModel required >  
-
-          <label for="institute_category">Institute Category:</label>
-          <select id="institute_category" name="institute_category" ngModel required>
             
-              <option value="Government">Government</option>
-              <option value="Private">Private</option>
-              <option value="Autonomous">Autonomous</option>
-              
-           
-            </select>
+          <label for="student_contact_number">Student Contact Number: </label>
+          <input type="tel" id="student_contact_number" name="student_contact_number" pattern="[789][0-9]{9}" ngModel required >
 
-            <label for="institute_type">Institute Type:</label>
-          <select id="institute_type" name="institute_type" ngModel required>
-            
-              <option value="Medical">Medical</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Law">Law</option>
-              <option value="Management">Management</option>
-              
-              
-           
-            </select>
+          <label for="student_aadhar_number">Student Aadhar Number: </label>
+          <input type="tel" id="student_aadhar_number" name="student_aadhar_number" pattern="[0-9]{12}" ngModel required >
         
           
           
@@ -556,7 +520,7 @@ label.light {
         style="margin-right: 20px;"
        
         type="submit"
-        [disabled]="!authForm1.valid"
+        [disabled]="!authForm4.valid"
       ><i class="fa fa-paper-plane" style="margin-right: 10px;"></i>
         {{ isLoginMode ? 'Login' : 'Sign Up' }}
       </button>

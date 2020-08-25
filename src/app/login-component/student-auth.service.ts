@@ -24,31 +24,25 @@ export class AuthService3 {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  signup(email:string, password:string, instituteCategory:string, instituteName:string, instituteDISECode:string, instituteType:string, affiliatedUniversityName:string, affiliatedUniversityState:string, yearStarted:Number, instituteLoc:string, address:string, instituteCity:string, instituteState:string, institutePincode:number, district:string, principalName:string,mobileNumber:string,instituteEmail:string) {
+  signup(email:string, password:string, studentName:string, studentDOB:Date, studentGender:string, studentDistrict:string, studentMobileNo:string, studentEmail:string, studentaadhar:string, studentState:string) {
     return this.http
       .post<AuthResponseData>(
-        'http://localhost:8585/instituteRegister',
+        'http://localhost:8585/studentRegister',
         {
           email: email,
           password: password,
-          role:"Institute",
-          roleId:3,
-          instituteCategory:instituteCategory, 
-          instituteName:instituteName, 
-          instituteDISECode:instituteDISECode, 
-          instituteType:instituteType, 
-          affiliatedUniversityName:affiliatedUniversityName, 
-          affiliatedUniversityState:affiliatedUniversityState, 
-          yearStarted:yearStarted, 
-          instituteLoc:instituteLoc, 
-          address:address, 
-          instituteCity:instituteCity, 
-          instituteState:instituteState, 
-          institutePincode:institutePincode, 
-          district:district, 
-          principalName:principalName,
-          mobileNumber:mobileNumber,
-          instituteEmail:instituteEmail
+          role:"Student",
+          roleId:4,
+
+          studentName:studentName, 
+          studentDOB:studentDOB, 
+          studentGender:studentGender, 
+          studentDistrict:studentDistrict, 
+          studentMobileNo:studentMobileNo, 
+          studentEmail:studentEmail, 
+          studentaadhar:studentaadhar, 
+          studentState:studentState,
+          instituteCode:10102
 
         }
       )
@@ -69,7 +63,7 @@ export class AuthService3 {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'http://localhost:8585/instituteLogin',
+        'http://localhost:8585/studentLogin',
         {
           email: email,
           password: password
