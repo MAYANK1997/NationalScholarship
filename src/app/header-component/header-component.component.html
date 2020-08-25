@@ -39,7 +39,7 @@
                             
                         </ul>
                     </li>
-                    <li  class="dropdown"  *ngIf="!isAuthenticated" ><a class="dropdown-toggle" data-toggle="dropdown" routerLink="/login"><i class="fa fa-sign-in fa-2x"></i><br/>Student Login</a></li>
+                    <li  class="dropdown"  *ngIf="!isAuthenticated" ><a class="dropdown-toggle" data-toggle="dropdown" routerLink="/auth-student"><i class="fa fa-sign-in fa-2x"></i><br/>Student Login</a></li>
                     <li  class="dropdown" *ngIf="isAuthenticated"><a class="dropdown-toggle" data-toggle="dropdown" (click)="onLogout()"><i class="fa fa-power-off fa-2x" aria-hidden="true"></i><br/>Logout</a></li>   
                     
                     
@@ -67,7 +67,7 @@
                     <strong>Institute Login</strong>
                 </a>
             </li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Officer's Login<span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><strong>Officer's Login</strong><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a routerLink="/auth">Ministry</a></li>
                            

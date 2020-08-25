@@ -106,7 +106,7 @@ body {
         <div class="form">
             <h2>Institute Registration</h2>
 
-            <form class="login-form" action="register.lti" method="post" enctype="multipart/form-data">
+            <form class="login-form">
 
                 <table>
                 
@@ -121,6 +121,16 @@ body {
                     </tr>
 
                     <tr>
+                      <td>Institute Type :</td>
+                      <td>  <select name="instituteType" style="width: 200px; height:35px ;align-self: left;">
+                          <option value="Medical">Medical</option>
+                          <option value="Engineering">Engineering</option>
+                          
+                         
+                        </select></td>
+                  </tr>
+
+                    <tr>
                         <td>Institute Name :</td>
                         <td><input type="text" name="instituteName" placeholder="Enter Institute Name"><br></td>
                     </tr>
@@ -132,7 +142,7 @@ body {
                     </tr>
 
                     <tr>
-                        <td>University name :</td>
+                        <td>Affiliated University name :</td>
                         <td><input type="text" name="universityName" placeholder="Enter University Name"  required><br></td>
                     </tr>
 
@@ -141,25 +151,33 @@ body {
                         <td><input type="password" placeholder="Enter Password" name="institutePass"><br></td>
                     </tr>
 
-                    <tr>
-                        <td>Institute Establishment Certificate :</td>
-                        <td><input type="file" name="instituteEstbCertFile" required><br></td>
-                    </tr>
+                    
 
                     <tr>
-                        <td>Institute Affiliation Certificate :</td>
-                        <td><input type="file" name="instituteAffCertFile" required><br></td>
-                    </tr>
-
-                    <tr>
-                        <td>Institute location :</td>
+                        <td>Affiliated University State :</td>
                         <td><input type="text" name="instituteLoc" placeholder="Enter Location"  required><br></td>
                     </tr>
 
+                    
                     <tr>
+                      <td>Year started:</td>
+                      <td><input type="number" name="instituteLoc" placeholder="Enter Location"  required><br></td>
+                  </tr>
+
+                  <tr>
+                    <td>Institute Address1 :</td>
+                    <td><input type="text" name="instituteCity" placeholder="Enter City"  required><br></td>
+                </tr>
+
+                <tr>
+                  <td>Institute Address2 :</td>
+                  <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
+                </tr>
+
+                <tr>
                         <td>Institute city :</td>
                         <td><input type="text" name="instituteCity" placeholder="Enter City"  required><br></td>
-                    </tr>
+                </tr>
 
                     <tr>
                         <td>Institute state :</td>
@@ -171,6 +189,23 @@ body {
                         <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
                     </tr>
 
+                    <tr>
+                      <td>Institute District :</td>
+                      <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
+                  </tr>
+
+                  <tr>
+                    <td>Principal Name :</td>
+                    <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
+                </tr>
+                <tr>
+                  <td>Mobile Number :</td>
+                  <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
+              </tr>
+              <tr>
+                <td>Email :</td>
+                <td><input type="text" name="institutePincode" placeholder="Enter PinCode (6 digits)" pattern="[1-9]{1}[0-9]{5}" required><br></td>
+            </tr>
             
 
                     <tr>

@@ -18,21 +18,38 @@ export interface AuthResponseData {
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthService {
+export class AuthService2 {
   user1 = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  signup(email: string, password: string) {
+  signup(email:string, password:string, instituteCategory:string, instituteName:string, instituteDISECode:string, instituteType:string, affiliatedUniversityName:string, affiliatedUniversityState:string, yearStarted:Number, instituteLoc:string, address:string, instituteCity:string, instituteState:string, institutePincode:number, district:string, principalName:string,mobileNumber:string,instituteEmail:string) {
     return this.http
       .post<AuthResponseData>(
-        'http://localhost:8585/ministryRegister',
+        'http://localhost:8585/instituteRegister',
         {
           email: email,
           password: password,
-          role:"Minister",
-          roleId:1
+          role:"Institute",
+          roleId:3,
+          instituteCategory:instituteCategory, 
+          instituteName:instituteName, 
+          instituteDISECode:instituteDISECode, 
+          instituteType:instituteType, 
+          affiliatedUniversityName:affiliatedUniversityName, 
+          affiliatedUniversityState:affiliatedUniversityState, 
+          yearStarted:yearStarted, 
+          instituteLoc:instituteLoc, 
+          address:address, 
+          instituteCity:instituteCity, 
+          instituteState:instituteState, 
+          institutePincode:institutePincode, 
+          district:district, 
+          principalName:principalName,
+          mobileNumber:mobileNumber,
+          instituteEmail:instituteEmail
+
         }
       )
       .pipe(
@@ -52,7 +69,7 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<AuthResponseData>(
-        'http://localhost:8585/ministryLogin',
+        'http://localhost:8585/instituteLogin',
         {
           email: email,
           password: password
@@ -104,7 +121,7 @@ export class AuthService {
 
   logout() {
     this.user1.next(null);
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/auth-institute']);
     localStorage.removeItem('userData');
     if (this.tokenExpirationTimer) {
       clearTimeout(this.tokenExpirationTimer);

@@ -7,21 +7,21 @@ import {
 } from '@angular/common/http';
 import { take, exhaustMap } from 'rxjs/operators';
 
-import { AuthService } from './auth.service';
+import { AuthService1 } from './auth-nodal.service';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService1) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-    return this.authService.user1.pipe(
+    return this.authService.user.pipe(
       take(1),
-      exhaustMap(user1 => {
-        if (!user1) {
+      exhaustMap(user => {
+        if (!user) {
           return next.handle(req);
         }
         const modifiedReq = req.clone({
-          params: new HttpParams().set('auth', user1.token)
+          params: new HttpParams().set('auth-nodal', user.token)
         });
         return next.handle(modifiedReq);
       })

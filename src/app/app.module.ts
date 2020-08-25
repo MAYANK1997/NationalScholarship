@@ -18,7 +18,6 @@ import { LandingPageComponentComponent } from './landing-page-component/landing-
 import { LoginComponentComponent } from './login-component/login-component.component';
 import { StudentRegisterComponentComponent } from './student-register-component/student-register-component.component';
 import { InstituteRegisterComponentComponent } from './institute-register-component/institute-register-component.component';
-
 import { InstituteLoginComponentComponent } from './institute-login-component/institute-login-component.component';
 import { OfficerLoginComponentComponent } from './officer-login-component/officer-login-component.component';
 import { SidecomponentComponent } from './sidecomponent/sidecomponent.component';
@@ -32,6 +31,11 @@ import { StudentBasicDetailsComponent } from './student-basic-details/student-ba
 import { StudentAcademicDetailsComponent } from './student-academic-details/student-academic-details.component';
 import { StudentBankDetailsComponent } from './student-bank-details/student-bank-details.component';
 import { StudentDocumentUploadComponent } from './student-document-upload/student-document-upload.component';
+import { MinisterContentContainerComponent } from './ministery-dashboard-component/minister-content-container/minister-content-container.component';
+import { InstituteContentContainerComponent } from './institute-dashboard-component/institute-content-container/institute-content-container.component';
+import { StudentContentContainerComponent } from './student-dashboard-component/student-content-container/student-content-container.component';
+import { NodalContentContainerComponent } from './nodal-dashboard-component/nodal-content-container/nodal-content-container.component';
+
 
 
 @NgModule({
@@ -57,7 +61,12 @@ import { StudentDocumentUploadComponent } from './student-document-upload/studen
     StudentBasicDetailsComponent,
     StudentAcademicDetailsComponent,
     StudentBankDetailsComponent,
-    StudentDocumentUploadComponent
+    StudentDocumentUploadComponent,
+    MinisterContentContainerComponent,
+    InstituteContentContainerComponent,
+    StudentContentContainerComponent,
+    NodalContentContainerComponent,
+  
   ],
   imports: [
     BrowserModule,

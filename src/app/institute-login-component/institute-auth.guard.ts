@@ -9,11 +9,11 @@ import {
   import { Observable } from 'rxjs';
   import { map, tap, take } from 'rxjs/operators';
   
-  import { AuthService } from './auth.service';
+  import { AuthService2 } from './institute-auth.service';
   
   @Injectable({ providedIn: 'root' })
-  export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router) {}
+  export class AuthGuard2 implements CanActivate {
+    constructor(private authService: AuthService2, private router: Router) {}
   
     canActivate(
       route: ActivatedRouteSnapshot,
@@ -30,7 +30,7 @@ import {
           if (isAuth) {
             return true;
           }
-          return this.router.createUrlTree(['/auth']);
+          return this.router.createUrlTree(['/auth-institute']);
         })
         // tap(isAuth => {
         //   if (!isAuth) {

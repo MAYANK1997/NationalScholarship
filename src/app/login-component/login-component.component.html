@@ -8,332 +8,570 @@
 
 
 
- <app-header-component></app-header-component> 
-    
-    
-   
-    
-    
-  
  <style>
-     body{
-         padding: 0;
-         margin: 0;
-         background-color: #f2f2f2;
-         font-family: 'Roboto', sans-serif;
-     }
-     .form{
-         background-color: #f2f2f2;
-         height: 100%;
-         width: 100%;
-     }
- 
- 
-     .top-bar{
-         background-color: #272727;
-         color: #e8e8e8;
-         padding: 10px 0;
-         font-size: .9em;
-         box-shadow: 0px 2px 3px #999;
-     }
-     .top-bar ul.inline{
-         padding: 0;
-         margin: 0;
-         list-style: none;
-     }
-     .top-bar ul.inline li{
-         display: inline;
-     }
-     .top-bar a{
-         color: #e2e2e2;
-         text-decoration: none;
-     }
- 
-     .container{
-         width: 984px;
-         padding: 0 20px;
-         text-align: left;
-     }
- 
-     .cards-container{
-         background-color: #fff;
-         padding: 15px 0;
-         border-bottom: 1px solid #dadada;
-     }
- 
-   
-     .inline{
-         display: inline;
-     }
-     .block{
-         display: block;
-     }
-     .inline-block{
-         display: inline-block;
-     }
-     .left{
-         float: left;
-     }
-     .right{
-         float: right;
-     }
-     .clear{
-         clear: both;
-     }
-     .tp-bg{
-         background-color: rgba(0,0,0,.5) !important;
-     }
-     .bg-orange{
-         background-color: #f36e21 !important;
-     }
-     .bg-grey{
-         background-color: #dadada !important;
-     }
- 
-     .white-text{
-         color: #fff !important;
-     }
- 
-     .padding-5{
-         padding: 5px;
-     }
-     .padding-10{
-         padding: 10px;
-     }
-     .padding-15{
-         padding: 15px;
-     }
-     .padding-20{
-         padding: 20px;
-     }
-     .padding-25{
-         padding: 25px;
-     }
-     .padding-30{
-         padding: 30px;
-     }
-     .no-padding{
-         padding: 0;
-     }
-     .no-margin{
-         margin: 0;
-     }
- 
-     .gap-type-default{
-         height: .75em;
-     }
-     .gap-type-1{
-         height: 5px;
-     }
-     .gap-type-2{
-         height: 10px;
-     }
-     .gap-type-3{
-         height: 15px;
-     }
-     .gap-type-4{
-         height: 20px;
-     }
- 
-     .login-container{
-         background-color: #fff;
-         box-shadow: 0px 2px 3px #0db7c4;
-         height: auto;
-         max-width: 400px;
-         min-width: 320px;
-         margin: 20px auto;
-         text-align: left;
-     }
-     .login-container .title{
-         padding: 15px;
-         background-color: #f85b5b;
-         color: #fff;
-         border-bottom: 1px solid #dadada;
-         border-radius: 5px;
-     }
-     .login-container .title h3{
-         font-weight: 300;
-         margin: 0;
-     }
-     .login-container table{
-         width: 100%;
-     }
-     .login-container .form-container{
-         padding: 40px 20px;
-     }
-     .login-container .form-container input[type=email]{
-         padding: 10px 20px;
-         width: 100%;
-         box-sizing: border-box;
-         margin-bottom: 10px;
-         border: 1px solid #ccc;
-         font-size: .8em;
-     }
- 
- 
-     .login-container .form-container input[type=password]{
-         padding: 10px 20px;
-         width: 100%;
-         box-sizing: border-box;
-         margin-bottom: 10px;
-         border: 1px solid #ccc;
-         font-size: .8em;
-     }
- 
-     .login-container .form-container .select{
-         padding: 10px 20px;
-         width: 100%;
-         box-sizing: border-box;
-         margin-bottom: 10px;
-         border: 1px solid #ccc;
-         font-size: .8em;
+    body{
+        padding: 0;
+        margin: 0;
+        background-color: #f2f2f2;
+        font-family: 'Roboto', sans-serif;
+    }
+    .form{
+        background-color: #f2f2f2;
+        height: 100%;
+        width: 100%;
+    }
+  
+  
+    .top-bar{
+        background-color: #272727;
+        color: #e8e8e8;
+        padding: 10px 0;
+        font-size: .9em;
+        box-shadow: 0px 2px 3px #999;
+    }
+    .top-bar ul.inline{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .top-bar ul.inline li{
+        display: inline;
+    }
+    .top-bar a{
+        color: #e2e2e2;
+        text-decoration: none;
+    }
+  
+    .container{
+        width: 984px;
+        padding: 0 20px;
+        text-align: left;
+    }
+  
+    .cards-container{
+        background-color: #fff;
+        padding: 15px 0;
+        border-bottom: 1px solid #dadada;
+    }
+  
+  
+    .inline{
+        display: inline;
+    }
+    .block{
+        display: block;
+    }
+    .inline-block{
+        display: inline-block;
+    }
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+    }
+    .clear{
+        clear: both;
+    }
+    .tp-bg{
+        background-color: rgba(0,0,0,.5) !important;
+    }
+    .bg-orange{
+        background-color: #f36e21 !important;
+    }
+    .bg-grey{
+        background-color: #dadada !important;
+    }
+  
+    .white-text{
+        color: #fff !important;
+    }
+  
+    .padding-5{
+        padding: 5px;
+    }
+    .padding-10{
+        padding: 10px;
+    }
+    .padding-15{
+        padding: 15px;
+    }
+    .padding-20{
+        padding: 20px;
+    }
+    .padding-25{
+        padding: 25px;
+    }
+    .padding-30{
+        padding: 30px;
+    }
+    .no-padding{
+        padding: 0;
+    }
+    .no-margin{
+        margin: 0;
+    }
+  
+    .gap-type-default{
+        height: .75em;
+    }
+    .gap-type-1{
+        height: 5px;
+    }
+    .gap-type-2{
+        height: 10px;
+    }
+    .gap-type-3{
+        height: 15px;
+    }
+    .gap-type-4{
+        height: 20px;
+    }
+  
+    .login-container{
+        background-color: #fff;
+        box-shadow: 0px 2px 3px #0db7c4;
+        height: auto;
+        max-width: 400px;
+        min-width: 320px;
+        margin: 20px auto;
+        text-align: left;
+    }
+    .login-container .title{
+        padding: 15px;
+        background-color: #f85b5b;
+        color: #fff;
+        border-bottom: 1px solid #dadada;
+        border-radius: 5px;
+    }
+    .login-container .title h3{
+        font-weight: 300;
+        margin: 0;
+    }
+    .login-container table{
+        width: 100%;
+    }
+    .login-container .form-container{
+        padding: 40px 20px;
+    }
+    .login-container .form-container input[type=email]{
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        font-size: .8em;
+    }
+  
+  
+    .login-container .form-container input[type=password]{
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        font-size: .8em;
+    }
+  
+    .login-container .form-container .select{
+        padding: 10px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        font-size: .8em;
+        
+    }
+    .login-container .form-container input[type=email]:hover{
+        border-color: #adadad;
+    }
+    .login-container .form-container input[type=email]:focus{
+        border-color: #4866af;
+    }
+    .login-container .form-container input[type=email]:focus{
+        border-color: #4866af;
+    }
+  
+    .login-container .form-container input[type=password]:hover{
+        border-color: #adadad;
+    }
+    .login-container .form-container input[type=password]:focus{
+        border-color: #4866af;
+    }
+    .login-container .form-container input[type=password]:focus{
+        border-color: #4866af;
+    }
+    .login-container .form-container button[type=submit]{
+        background-color: #f36e21;
+        color: #fff;
+        border: 1px solid #f36e21;
+        padding: 10px 20px;
+        border-radius: 3px;
+        cursor: pointer;    
+    }
+  
+    .login-container .form-container button[type=submit]:disabled{
+  
+  opacity: 0.4;
+  
+  }
+  
+  
+    .login-container .form-container a{
+        text-decoration: none;
+        color: #0db7c4;
+        font-size: .8em;
+    }
+    .login-container .form-container a:hover{
+        text-decoration: underline;
+        color: #f85b5b;
+    }
+    .notification{
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .notification.success{
+        background-color: #21c465;
+        color: #ffffff;
+    }
+    .notification.error{
+        background-color: #ff4444;
+        color: #ffffff !important;
+        
+    }
+      .top-bar {
+  background-color: #272727;
+  color: #e8e8e8;
+  padding: 5px 0;
+  font-size: .9em;
+  box-shadow: 0px 2px 3px #999;
+  }
+  </style>
+  
+  
+  <app-header-component></app-header-component> 
+  
+  <div class="row" *ngIf="isLoginMode"  >
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{ error }}</p>
+      </div>
+      <div *ngIf="isLoading" style="text-align: center;">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+  
+      <main *ngIf="!isLoading">
+        <table  style="width: 100%;">
+            <tr>
+                <td>
+                    <div class="login-container">
+                        <div class="title">
+                            <h3>
+                                <i class="fa fa-key fa-2x" style="margin-right: 12px;"></i><span style="font-size:20px;">
+                                    Login For Fresh Application </span>
+                            </h3>
+                        </div>
+                        <div class="form-container">
+  
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+        <table>
+                                                                          
+          <tr>
+              <td>
+                  <i class="fa fa-envelope"></i>
+              </td>
+              <td>
+                  
+                  <input type="email" name="institute_email" ngModel id="loginid1" placeholder="Email"  email required />
+                  
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <i class="fa fa-shield"></i>
+              </td>
+              <td>
+                  <input type="password"  name="institute_password" ngModel placeholder="Password..." id="pass1" required minlength="6"/>
+              </td>
+          </tr>
+  
          
-     }
-     .login-container .form-container input[type=email]:hover{
-         border-color: #adadad;
-     }
-     .login-container .form-container input[type=email]:focus{
-         border-color: #4866af;
-     }
-     .login-container .form-container input[type=email]:focus{
-         border-color: #4866af;
-     }
- 
-     .login-container .form-container input[type=password]:hover{
-         border-color: #adadad;
-     }
-     .login-container .form-container input[type=password]:focus{
-         border-color: #4866af;
-     }
-     .login-container .form-container input[type=password]:focus{
-         border-color: #4866af;
-     }
-     .login-container .form-container button[type=submit]{
-         background-color: #f36e21;
-         color: #fff;
-         border: 1px solid #f36e21;
-         padding: 10px 20px;
-         border-radius: 3px;
-         cursor: pointer;    
-     }
-
-     .login-container .form-container button[type=submit]:disabled{
-
-                opacity: 0.4;
-
-     }
- 
- 
-     .login-container .form-container a{
-         text-decoration: none;
-         color: #0db7c4;
-         font-size: .8em;
-     }
-     .login-container .form-container a:hover{
-         text-decoration: underline;
-         color: #f85b5b;
-     }
-     .notification{
-         padding: 10px 20px;
-         font-size: 14px;
-     }
-     .notification.success{
-         background-color: #21c465;
-         color: #ffffff;
-     }
-     .notification.error{
-         background-color: #ff4444;
-         color: #ffffff !important;
+          
+          <tr>
+              <td></td>
+              <td>
+                <button
+                style="margin-right: 20px;"
+               
+                type="submit"
+                [disabled]="!authForm.valid"
+              ><i class="fa fa-paper-plane" style="margin-right: 10px;"></i>
+                {{ isLoginMode ? 'Login' : 'Sign Up' }}
+              </button>
+              
+              <button style="margin-right: 20px;" class="btn btn-primary" (click)="onSwitchMode()" type="button"> 
+                Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+              </button>
+                    
+              </td>
+          </tr>
+          
          
-     }
-       .top-bar {
- background-color: #272727;
- color: #e8e8e8;
- padding: 5px 0;
- font-size: .9em;
- box-shadow: 0px 2px 3px #999;
- }
- </style>
+        
+      </table>
+  </form>
+
+
+
+
+  </div>
+  </div>
+  </td>
+  </tr>  
+  </table>
+  </main>
+    </div>
+  </div>
+<style>
+
+
+
+.aa {
+  max-width: 650px;
+  margin: 10px auto;
+  padding: 10px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0 4px 8px 0;
+}
+
+select {
+  padding: 6px;
+  height: 32px;
+  border-radius: 2px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #f36e21;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
  
- 
- 
- 
- 
- <main>
-     <table  style="width: 100%; ">
-         <tr>
-             <td>
-                 <div class="login-container">
-                     <div class="title">
-                         <h3>
-                             <i class="fa fa-key fa-2x" style="margin-right: 12px;"></i><span style="font-size:20px;">
-                                 Login for Fresh Application</span>
-                         </h3>
-                     </div>
-                     
-                     <div class="form-container">
-                         <form #ref2="ngForm" (ngSubmit)="onSubmit(ref2)">
-                         
-                             <table>
-                                                                        
-                                 <tr>
-                                     <td>
-                                         <i class="fa fa-envelope"></i>
-                                     </td>
-                                     <td>
-                                         
-                                         <input type="email" name="email" ngModel id="loginid1" placeholder="Email"  email required />
-                                     </td>
-                                 </tr>
-                                 <tr>
-                                     <td>
-                                         <i class="fa fa-shield"></i>
-                                     </td>
-                                     <td>
-                                         <input type="password"  name="password" ngModel placeholder="Password..." id="pass1" required minlength="6"/>
-                                     </td>
-                                 </tr>
- 
-                                
-                                 
-                                 <tr>
-                                     <td></td>
-                                     <td>
-                                         <button type="submit" style="margin-right: 20px;" [disabled]="!ref2.valid"  >
-                                             <i class="fa fa-paper-plane" style="margin-right: 10px;"></i> Login
-                                         </button>
-                                        
-                                        <a routerLink="/studentregister" style="text-decoration: none;font-size: 15px; font-weight: bold;">New Student ? Register Here</a>
-                                     </td>
-                                 </tr>
-                                 
-                                
-                               
-                             </table>
-                         </form>
-                     </div>
-                 </div>
-             </td>
-         </tr>  
-     </table>
- </main>
- 
-   
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- <app-footer-component></app-footer-component>
+  
+  
+  margin-bottom: 10px;
+}
+
+button:disabled{
+
+    opacity: 0.4;
+}
+
+fieldset {
+  margin-bottom: 30px;
+  border: none;
+}
+
+legend {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+label.light {
+  font-weight: 300;
+  display: inline;
+}
+
+.number {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+@media screen and (min-width: 480px) {
+
+  form {
+    max-width: 480px;
+  }
+
+}
+
+
+</style>
+  <div class="row" *ngIf="!isLoginMode">
+    <div class="col-md-12">
+       
+            <div class="alert alert-danger" *ngIf="error">
+              <p>{{ error }}</p>
+            </div>
+            <div *ngIf="isLoading" style="text-align: center;">
+              <app-loading-spinner></app-loading-spinner>
+            </div>
+            <div class="aa" style="background-color:#f85b5b">
+
+                <h3 style="color:white; font-size:2em;">
+                    <i class="fa fa-key fa-2x" style="margin-right: 12px;"></i><span>
+                        New Student Registration </span>
+                </h3>
+              </div>
+            
+      <form #authForm1="ngForm" (ngSubmit)="onSubmit(authForm1)" *ngIf="!isLoading"  class="aa">
+          
+      
+        
+        <fieldset>
+          
+        
+          <label for="student_name">Student Name:</label>
+          <input type="text" id="student_name" name="student_name" ngModel required> 
+
+          <label for="institute_email">Institute Email:</label>
+          <input type="email" id="institute_email" name="institute_email" ngModel required email>
+       
+          <label for="institute_password">Institute Password:</label>
+          <input type="password" id="institute_password" name="institute_password" ngModel required minlength="6">
+
+          <label for="institute_dise_code">Institute DISE Code:</label>
+          <input type="text" id="institute_dise_code" name="institute_dise_code" ngModel required>
+
+          <label for="institute_year_started">Year Started:</label>
+          <input type="number" id="institute_year_started" name="institute_year_started" ngModel required maxlength="4" min="1500" max="2020">
+
+          <label for="institute_address1">Institute Address1:</label>
+          <input type="text" id="institute_address1" name="institute_address1" ngModel required>
+
+          <label for="institute_address2">Institute Address2:</label>
+          <input type="text" id="institute_address2" name="institute_address2" ngModel required>
+
+          <label for="institute_district">Institute District:</label>
+          <input type="text" id="institute_district" name="institute_district" ngModel required>
+
+          <label for="institute_city">Institute City:</label>
+          <input type="text" id="institute_city" name="institute_city" ngModel required>
+
+          <label for="institute_state">Institute State:</label>
+          <input type="text" id="institute_state" name="institute_state" ngModel required>
+
+          <label for="institute_pincode">Institute Pincode:</label>
+          <input type="number" id="institute_pincode" name="institute_pincode" ngModel required maxlength="6"> 
+
+          <label for="name">Affiliated University Name:</label>
+          <input type="text" id="institute_affiliated_university_name" name="institute_affiliated_university_name" ngModel required>
+
+          <label for="institute_affiliated_university_state">Affiliated University State:</label>
+          <input type="text" id="institute_affiliated_university_state" name="institute_affiliated_university_state" ngModel required>
+        
+          <label for="institute_email">Institute Email:</label>
+          <input type="email" id="institute_email" name="institute_email" ngModel required email>
+       
+          <label for="institute_password">Institute Password:</label>
+          <input type="password" id="institute_password" name="institute_password" ngModel required minlength="6">
+
+          <label for="institute_principal_name">Principal Name:</label>
+          <input type="text" id="institute_principal_name" name="institute_principal_name" ngModel required>
+
+          <label for="institute_contact_number">Contact Number: </label>
+          <input type="tel" id="institute_contact_number" name="institute_contact_number" ngModel required >  
+
+          <label for="institute_category">Institute Category:</label>
+          <select id="institute_category" name="institute_category" ngModel required>
+            
+              <option value="Government">Government</option>
+              <option value="Private">Private</option>
+              <option value="Autonomous">Autonomous</option>
+              
+           
+            </select>
+
+            <label for="institute_type">Institute Type:</label>
+          <select id="institute_type" name="institute_type" ngModel required>
+            
+              <option value="Medical">Medical</option>
+              <option value="Engineering">Engineering</option>
+              <option value="Law">Law</option>
+              <option value="Management">Management</option>
+              
+              
+           
+            </select>
+        
+          
+          
+        </fieldset>
+        
+       
+        <button
+        style="margin-right: 20px;"
+       
+        type="submit"
+        [disabled]="!authForm1.valid"
+      ><i class="fa fa-paper-plane" style="margin-right: 10px;"></i>
+        {{ isLoginMode ? 'Login' : 'Sign Up' }}
+      </button>
+      
+      <button style="margin-right: 20px;" class="btn btn-primary" (click)="onSwitchMode()" type="button"> 
+        Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+      </button>
+        
+       </form>
+        </div>
+      </div>
+
+
+
+  
+  <app-footer-component></app-footer-component>
+  
  

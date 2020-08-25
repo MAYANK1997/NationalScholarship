@@ -14,6 +14,9 @@ import { InstituteDashboardComponentComponent } from './institute-dashboard-comp
 import { NodalDashboardComponentComponent } from './nodal-dashboard-component/nodal-dashboard-component.component';
 import { MinisteryDashboardComponentComponent } from './ministery-dashboard-component/ministery-dashboard-component.component';
 import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard1 } from './officer-login-component/auth-nodal.guard';
+import { AuthGuard2 } from './institute-login-component/institute-auth.guard';
+import { AuthGuard3 } from './login-component/student-auth.guard';
 
 const appRoutes: Routes = [
   {path:'', component:LandingPageComponentComponent},
@@ -22,12 +25,15 @@ const appRoutes: Routes = [
   {path:'studentregister', component:StudentRegisterComponentComponent},
   {path:'institutelogin', component:InstituteLoginComponentComponent},
   {path:'officerlogin', component:OfficerLoginComponentComponent},
-  {path:'studentdashboard', component:StudentDashboardComponentComponent},
-  {path:'institutedashboard', component:InstituteDashboardComponentComponent},
-  {path:'nodaldashboard', component:NodalDashboardComponentComponent},
+  {path:'studentdashboard', component:StudentDashboardComponentComponent,canActivate: [AuthGuard3]},
+  {path:'institutedashboard', component:InstituteDashboardComponentComponent,canActivate: [AuthGuard2]},
+  {path:'nodaldashboard', component:NodalDashboardComponentComponent, canActivate: [AuthGuard1]},
   {path:'ministerdashboard', component:MinisteryDashboardComponentComponent,canActivate: [AuthGuard]},
   
-  { path: 'auth', component: AuthComponent }
+  { path: 'auth', component: AuthComponent },
+  { path: 'auth-nodal', component:OfficerLoginComponentComponent},
+  { path: 'auth-institute', component:InstituteLoginComponentComponent},
+  { path: 'auth-student', component:LoginComponentComponent},
 ];
 
 @NgModule({
