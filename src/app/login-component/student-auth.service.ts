@@ -13,7 +13,23 @@ export interface AuthResponseData {
   refreshToken: string;
   expiresIn: string;
   localId: string;
-  Registered ?:boolean;
+  Registered ?:boolean
+	 	role:string
+	  roleId:number
+    password:string
+	  studentId:number
+	  instituteApprovalStatus:boolean
+	  nadalApprovalStatus:boolean
+	  ministryApprovalStatus:boolean
+	  studentName:string
+    studentDOB:Date
+      studentGender:string
+	  studentDistrict:string
+	  studentMobileNo:any
+	  studentEmail:string
+	  studentaadhar:string
+	  studentState:string
+	  instituteCode:string
   
 }
 

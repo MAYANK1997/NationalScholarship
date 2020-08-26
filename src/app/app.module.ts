@@ -35,6 +35,14 @@ import { MinisterContentContainerComponent } from './ministery-dashboard-compone
 import { InstituteContentContainerComponent } from './institute-dashboard-component/institute-content-container/institute-content-container.component';
 import { StudentContentContainerComponent } from './student-dashboard-component/student-content-container/student-content-container.component';
 import { NodalContentContainerComponent } from './nodal-dashboard-component/nodal-content-container/nodal-content-container.component';
+import { InstituteDocumentUploadComponent } from './institute-dashboard-component/institute-document-upload/institute-document-upload.component';
+import { StudentDetailsComponent } from './student-dashboard-component/student-details/student-details.component';
+
+import { ScholarshipDetailsListComponent } from './institute-dashboard-component/scholarship-details-list/scholarship-details-list.component';
+import { InstituteDetailsListComponent } from './nodal-dashboard-component/institute-details-list/institute-details-list.component';
+import { StudentDetailsListComponent } from './nodal-dashboard-component/student-details-list/student-details-list.component';
+import { InstituteDetailsListOneComponent } from './ministery-dashboard-component/institute-details-list-one/institute-details-list-one.component';
+import { StudentDetailsListOneComponent } from './ministery-dashboard-component/student-details-list-one/student-details-list-one.component';
 
 
 
@@ -66,6 +74,18 @@ import { NodalContentContainerComponent } from './nodal-dashboard-component/noda
     InstituteContentContainerComponent,
     StudentContentContainerComponent,
     NodalContentContainerComponent,
+    InstituteDocumentUploadComponent,
+    StudentDetailsComponent,
+   
+    ScholarshipDetailsListComponent,
+   
+    InstituteDetailsListComponent,
+   
+    StudentDetailsListComponent,
+   
+    InstituteDetailsListOneComponent,
+   
+    StudentDetailsListOneComponent,
   
   ],
   imports: [

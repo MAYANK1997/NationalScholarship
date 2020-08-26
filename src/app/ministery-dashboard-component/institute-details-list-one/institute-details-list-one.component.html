@@ -1,0 +1,190 @@
+<style>
+    .container {
+        max-width:500%;
+       
+      
+        align-items: center;
+        min-height: 100vh;
+      }
+      
+      .table {
+        width: 500%;
+        border: 1px solid #eeeeee;
+      }
+      
+      .table-header {
+        display: flex;
+        width: 500%;
+        background: #000;
+        padding: 18px 0;
+      }
+      
+      .table-row {
+        display: flex;
+        width: 500%;
+        padding: 18px 0;
+      }
+      .table-row:nth-of-type(odd) {
+        background: #eeeeee;
+      }
+      
+      .table-data,
+      .header__item {
+        flex: 1 1 20%;
+        text-align: center;
+       
+      }
+      
+      .header__item {
+        text-transform: uppercase;
+      }
+      
+      .filter__link {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        padding-left: 24px;
+        padding-right: 24px;
+      }
+      .filter__link::after {
+        content: "";
+        position: absolute;
+        right: -18px;
+        color: white;
+        font-size: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .filter__link.desc::after {
+        content: "(desc)";
+      }
+      .filter__link.asc::after {
+        content: "(asc)";
+      }
+    
+      a{
+    
+        cursor: pointer;
+      }
+    
+      button {
+          padding: 19px 39px 18px 39px;
+          color: #FFF;
+          background-color: #f36e21;
+          font-size: 18px;
+          text-align: center;
+          font-style: normal;
+          border-radius: 5px;
+          width: 100%;
+         
+          
+          
+          margin-bottom: 10px;
+        }
+      </style>
+        
+        
+        <div class="container">
+    
+            <h2 style="text-align: center;">INSTITUTE APPLICATION DETAILS</h2>
+            <div class="table">
+              <div class="table-header">
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTION NAME</a></div>
+                <div class="header__item"><a id="wins" class="filter__link filter_link--number">INSTITUTE DISE CODE</a></div>
+                <div class="header__item"><a id="draws" class="filter__link filter_link--number">YEAR STARTED</a></div>
+                <div class="header__item"><a id="losses" class="filter__link filter_link--number">INSTITUTE ADDRESS ONE</a></div>
+                <div class="header__item"><a id="losses" class="filter__link filter_link--number">INSTITUTE ADDRESS TWO</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTION DISTRICT</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTION CITY</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTION STATE</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTION PINCODE</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">AFFILIATED UNIVERSITY NAME</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">AFFILIATED UNIVERSITY STATE</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTE EMAIL</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">PRINCIPAL NAME</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">CONTACT NUMBER</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTE CATEGORY</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">INSTITUTE TYPE</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">ESTABLISHMENT CERTIFICATE</a></div>
+                <div class="header__item"><a id="name" class="filter__link filter_link--number">AFFILIATED CERTIFICATE</a></div>
+                
+              </div>
+              <div class="table-content">	
+                <div class="table-row">		
+                  <div class="table-data">{{instituteName}}</div>
+                  <div class="table-data">{{instituteDiseCode}}</div>
+                  <div class="table-data">{{yearStarted}}</div>
+                  <div class="table-data">{{instituteAdressOne}}</div>
+                  <div class="table-data">{{instituteAdressTwo}}</div>
+                  <div class="table-data">{{instituteDistrict}}</div>
+                  <div class="table-data">{{instituteCity}}</div>
+                  <div class="table-data">{{instituteState}}</div>
+                  <div class="table-data">{{institutePincode}}</div>
+                  <div class="table-data">{{affiliatedUniversityName}}</div>
+                  <div class="table-data">{{affiliatedUniversityState}}</div>
+                  <div class="table-data">{{instituteEmail}}</div>
+                  <div class="table-data">{{principalName}}</div>
+                  <div class="table-data">{{contactNumber}}</div>
+                  <div class="table-data">{{instituteCategory}}</div>
+                  <div class="table-data">{{instituteType}}</div>
+                  <div class="table-data">{{establishmentCertificate}}</div>
+                  <div class="table-data">{{affiliatedCertificate}}</div>
+                          
+                </div>
+              
+              </div>	
+            </div>
+    
+        <button 
+    
+        *ngIf="isApproved1"
+        style="margin-right: 20px;"
+        
+        type="button"
+        (click) = "onApproval()"
+        
+      
+        >
+       APPROVE
+      </button>  
+      
+      <button *ngIf="!isApproved2"
+        style="margin-right: 20px;"
+        
+        type="button"
+        
+        
+      
+        >
+       APPROVED
+      </button>
+      
+      <button
+      
+        *ngIf="!isRejected1"
+        style="margin-right: 20px;"
+        
+        type="button"
+        
+        
+      
+        >
+       REJECTED
+      </button>
+      
+      <button 
+      
+      style="margin-right: 20px;"
+      
+      type="button"
+      (click) = "onRejection()"
+      *ngIf="isRejected2"
+      
+      >
+      REJECT
+      </button> 
+      
+      </div>
+      
+      

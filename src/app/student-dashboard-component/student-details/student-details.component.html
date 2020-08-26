@@ -1,0 +1,424 @@
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+  
+  
+  
+  
+  .container {
+    max-width:120%;
+   
+  
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  .table {
+    width: 100%;
+    border: 1px solid #eeeeee;
+  }
+  
+  .table-header {
+    display: flex;
+    width: 100%;
+    background: #000;
+    padding: 18px 0;
+  }
+  
+  .table-row {
+    display: flex;
+    width: 100%;
+    padding: 18px 0;
+  }
+  .table-row:nth-of-type(odd) {
+    background: #eeeeee;
+  }
+  
+  .table-data,
+  .header__item {
+    flex: 1 1 20%;
+    text-align: center;
+   
+  }
+  
+  .header__item {
+    text-transform: uppercase;
+  }
+  
+  .filter__link {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .filter__link::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    color: white;
+    font-size: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .filter__link.desc::after {
+    content: "(desc)";
+  }
+  .filter__link.asc::after {
+    content: "(asc)";
+  }
+
+  a{
+
+    cursor: pointer;
+  }
+  </style>
+  
+  
+  
+  
+  <div class="container" *ngIf="toApply">
+    
+    <h2 style="text-align: center;">SCHOLARSHIP</h2>
+  <div class="table">
+    <div class="table-header">
+      <div class="header__item"><a id="name" class="filter__link">S.No</a></div>
+      <div class="header__item"><a id="wins" class="filter__link filter__link--number">SCHOLARSHIP NAME</a></div>
+      <div class="header__item"><a id="draws" class="filter__link filter__link--number">SCHOLARSHIP DESCRIPTION</a></div>
+      <div class="header__item"><a id="losses" class="filter__link filter__link--number">SCHOLARSHIP LEVEL</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number">SCHOLARSHIP AMOUNT</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number">SCHOLARSHIP STATUS</a></div>
+            <div class="header__item"><a id="total" class="filter__link filter__link--number">SCHOLARSHIP APPLY</a></div>
+    </div>
+    <div class="table-content">	
+      <div class="table-row">		
+        <div class="table-data">{{serialNumber}}.</div>
+        <div class="table-data">{{scholarshipName}}</div>
+        <div class="table-data">{{scholarshipDescription}}</div>
+        <div class="table-data">{{scholarshipLevel}}</div>
+                <div class="table-data">{{scholarshipAmount}}</div>
+                <div class="table-data">{{scholarshipStatus}}</div>
+                <div class="table-data"><a  *ngIf="!isApplied" (click)="apply()">Apply</a><p *ngIf="isApplied">Applied</p></div>
+      </div>
+    
+    </div>	
+  </div>
+</div>
+<div class="container" *ngIf="isApplied" style="margin-top:-400px;">
+    
+  <h2 style="text-align: center;">SCHOLARSHIP STATUS</h2>
+<div class="table">
+  <div class="table-header">
+    <div class="header__item"><a id="name" class="filter__link">STATUS ID</a></div>
+    <div class="header__item"><a id="wins" class="filter__link filter__link--number">INSTITUTE STATUS</a></div>
+    <div class="header__item"><a id="draws" class="filter__link filter__link--number">NODAL OFFICER STATUS</a></div>
+    <div class="header__item"><a id="losses" class="filter__link filter__link--number">MINISTRY STATUS</a></div>
+        
+  </div>
+  <div class="table-content">	
+    <div class="table-row">		
+      <div class="table-data">{{statusId}}</div>
+      <div class="table-data">{{instituteApprovalStatus}}</div>
+      <div class="table-data">{{nodalOfficerApprovalStatus}}</div>
+      <div class="table-data">{{ministryOfficerApprovalStatus}}</div>
+             
+    </div>
+  
+  </div>	
+</div>
+</div>
+
+<style>
+
+
+
+    .aa {
+      max-width: 650px;
+      margin: 10px auto;
+      padding: 10px 20px;
+      background: #f4f7f8;
+      border-radius: 8px;
+    }
+    
+    h1 {
+      margin: 0 0 30px 0;
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="email"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="time"],
+    input[type="url"],
+    
+    textarea,
+    select {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      font-size: 16px;
+      height: auto;
+      margin: 0;
+      outline: 0;
+      padding: 15px;
+      width: 100%;
+      background-color: #e8eeef;
+      color: #8a97a0;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+      margin-bottom: 30px;
+    }
+    
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin: 0 4px 8px 0;
+    }
+    
+    select {
+      padding: 6px;
+      height: 32px;
+      border-radius: 2px;
+    }
+    
+    button {
+      padding: 19px 39px 18px 39px;
+      color: #FFF;
+      background-color: #f36e21;
+      font-size: 18px;
+      text-align: center;
+      font-style: normal;
+      border-radius: 5px;
+      width: 100%;
+     
+      
+      
+      margin-bottom: 10px;
+    }
+    
+    button:disabled{
+    
+        opacity: 0.4;
+    }
+    
+    fieldset {
+      margin-bottom: 30px;
+      border: none;
+    }
+    
+    legend {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    label.light {
+      font-weight: 300;
+      display: inline;
+    }
+    
+    .number {
+      background-color: #5fcf80;
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      display: inline-block;
+      font-size: 0.8em;
+      margin-right: 4px;
+      line-height: 30px;
+      text-align: center;
+      text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+      border-radius: 100%;
+    }
+    
+    @media screen and (min-width: 480px) {
+    
+      form {
+        max-width: 480px;
+      }
+    
+    }
+    
+    
+    </style>
+      <div class="row" *ngIf="!toApply">
+        <div class="col-md-12">
+           
+          <div *ngIf="isLoading" style="text-align: center;">
+            <app-loading-spinner></app-loading-spinner>
+          </div>     
+                <div class="aa" style="background-color:#f85b5b" *ngIf="!isLoading">
+    
+                    <h3 style="color:white; font-size:2em;">
+                      <i class="fa fa-wpforms fa-2x" aria-hidden="true" style="margin-right:12px"></i><span>
+                           Scholarship Application Form </span>
+                    </h3>
+                  </div>
+                
+          <form #authForm4="ngForm" (ngSubmit)="onSubmit(authForm4)" class="aa" *ngIf="!isLoading">
+              
+          
+            
+            <fieldset>
+              
+            
+                <label for="community">Community (GENERAL / ST / OBC / OTHERS):</label>
+                <input type="text" id="community" name="community" ngModel required> 
+        
+                <label for="religion">Religion:</label>
+                <input type="text" id="religion" name="religion" ngModel required> 
+        
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" id="fatherName" name="fatherName" ngModel required>
+             
+                <label for="motherName">Mother's Name:</label>
+                <input type="text" id="motherName" name="motherName" ngModel required>
+        
+                <label for="disabled">Disabled</label>
+                <select id="disabled" name="disabled" ngModel required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+        
+              
+                  <label for="typeOfDisability">Type Of Disability:</label>
+                  <input type="text" id="typeOfDisability" name="typeOfDisability" ngModel required>
+        
+                  <label for="fatherProfession">Father's Profession:</label>
+                  <input type="text" id="fatherProfession" name="fatherProfession" ngModel required>
+        
+                  
+                <label for="motherProfession">Mother's Profession: </label>
+                <input type="text" id="motherProfession" name="motherProfession" ngModel required >
+        
+                <label for="fatherIncome">Father's Income: </label>
+                <input type="number" id="fatherIncome" name="fatherIncome" ngModel required >
+              
+                <label for="maritalStatus">Marital Status: </label>
+                <input type="text" id="maritalStatus" name="maritalStatus" ngModel required >
+              
+                <label for="locality">Locality: </label>
+                <input type="text" id="locality" name="locality" ngModel required >
+              
+                <label for="city">City: </label>
+                <input type="text" id="city" name="city" ngModel required >
+              
+                <label for="state">State: </label>
+                <input type="text" id="state" name="state" ngModel required >
+              
+                <label for="pincode">Pincode: </label>
+                <input type="number" id="pincode" name="pincode" ngModel required >
+
+                <label for="institute_name">Institution Name:</label>
+                <input type="text" id="institute_name" name="institute_name" ngModel required> 
+      
+                <label for="present_course">Present Course:</label>
+                <input type="text" id="present_course" name="present_course" ngModel required>
+             
+                <label for="present_course_year">Present Course Year:</label>
+                <input type="number" id="present_course_year" name="present_course_year" ngModel required >
+      
+                <label for="mode_of_study">Mode of Study:</label>
+                <select id="mode_of_study" name="mode_of_study" ngModel required>
+                  
+                    <option value="Online">In Person</option>
+                    <option value="Offline">Virtual</option>
+                    
+                 
+                  </select>
+      
+              
+                  <label for="class_start_date">Class Start Date:</label>
+                  <input type="date" id="class_start_date" name="class_start_date" ngModel required>
+
+                  <label for="university_name">University Name:</label>
+                  <input type="text" id="university_name" name="university_name" ngModel required>
+
+                  <label for="previous_course">Previous Course:</label>
+                  <input type="text" id="previous_course" name="previous_course" ngModel required>
+
+                  <label for="previous_passing_year">Previous Passing Year:</label>
+                  <input type="number" id="previous_passing_year" name="previous_passing_year" ngModel required>
+
+                  <label for="previous_class_percentage">Previous_Class_Percentage:</label>
+                  <input type="number" id="previous_class_percentage" name="previous_class_percentage" ngModel required>
+
+                  <label for="roll_no_tenth">10th Roll No:</label>
+                  <input type="text" id="roll_no_tenth" name="roll_no_tenth" ngModel required>
+
+                  <label for="board_name_tenth">10th Board Name:</label>
+                  <input type="text" id="board_name_tenth" name="board_name_tenth" ngModel required>
+
+                  <label for="passing_year_tenth">10th Passing Year:</label>
+                  <input type="number" id="passing_year_tenth" name="passing_year_tenth" ngModel required>
+
+                  <label for="marks_tenth">10th Marks:</label>
+                  <input type="number" id="marks_tenth" name="marks_tenth" ngModel required>
+
+                  <label for="roll_no_twelth">12th Roll No:</label>
+                  <input type="text" id="roll_no_twelth" name="roll_no_twelth" ngModel required>
+
+                  <label for="board_name_twelth">12th Board Name:</label>
+                  <input type="text" id="board_name_twelth" name="board_name_twelth" ngModel required>
+
+                  <label for="passing_year_twelth">12th Passing Year:</label>
+                  <input type="number" id="passing_year_twelth" name="passing_year_twelth" ngModel required>
+
+                  <label for="marks_twelth">12th Marks:</label>
+                  <input type="number" id="marks_twelth" name="marks_twelth" ngModel required>
+
+                  <label for="admissionFee">Admission Fee:</label>
+                  <input type="number" id="admissionFee" name="admissionFee" ngModel required>
+
+                  <label for="tutionFee">Tution Fee:</label>
+                  <input type="number" id="tutionFee" name="tuitionFee" ngModel required>
+
+                  <label for="otherFee">Other Fee:</label>
+                  <input type="number" id="otherFee" name="otherFee" ngModel required>
+
+                  <label for="accountNo">Bank Account Number:</label>
+    <input type="number" id="accountNo" name="accountNo" ngModel required minlength="8"> 
+
+    <label for="bankName">Bank Name:</label>
+    <input type="text" id="bankName" name="bankName" ngModel required>
+ 
+    <label for="ifscCode">Bank_IFSC:</label>
+    <input type="text" id="ifscCode" name="ifscCode" ngModel required minlength="8">
+              
+            </fieldset>
+            
+           
+            <button
+            style="margin-right: 20px;"
+           
+            type="submit"
+            [disabled]="!authForm4.valid"
+            >
+            SUBMIT APPLICATION
+          </button>
+          <button
+            style="margin-right: 20px;"
+            
+            type="button"
+            (click)="apply()"
+            
+
+            >
+           BACK
+          </button>
+          
+         
+            
+           </form>
+
+
+
+
+            </div>
+          </div>

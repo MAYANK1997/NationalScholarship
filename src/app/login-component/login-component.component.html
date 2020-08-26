@@ -1,13 +1,4 @@
 
-
-
-
-
-    
-
-
-
-
  <style>
     body{
         padding: 0;
@@ -273,7 +264,7 @@
                         </div>
                         <div class="form-container">
   
-      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading" autocomplete="on">
         <table>
                                                                           
           <tr>
@@ -491,8 +482,8 @@ label.light {
           <select id="student_gender" name="student_gender" ngModel required>
             
               <option value="Male">Male</option>
-              <option value="">Female</option>
-              <option value="Autonomous">Others</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
               
            
             </select>

@@ -36,7 +36,7 @@ onSubmit(form:NgForm){
   const password = form.value.student_password;
   const studentName = form.value.student_name;
   const studentDOB = form.value.student_dob;
-  const studentGender = form.value.gender;
+  const studentGender = form.value.student_gender;
   const studentDistrict = form.value.student_district;
   const studentMobileNo = form.value.student_contact_number;
   const studentEmail = form.value.student_email;
@@ -60,7 +60,7 @@ onSubmit(form:NgForm){
 
     authObs.subscribe(
       resData => {
-        console.log(resData);
+        alert(JSON.stringify(resData));
         this.isLoading = false;
         this.router.navigate(['/studentdashboard']);
       },

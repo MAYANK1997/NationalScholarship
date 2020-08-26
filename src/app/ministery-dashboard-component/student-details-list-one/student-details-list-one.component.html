@@ -1,0 +1,333 @@
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+    
+    
+    
+    
+    .container {
+      max-width:500%;
+     
+    
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    .table {
+      width: 500%;
+      border: 1px solid #eeeeee;
+    }
+    
+    .table-header {
+      display: flex;
+      width: 500%;
+      background: #000;
+      padding: 18px 0;
+    }
+    
+    .table-row {
+      display: flex;
+      width: 500%;
+      padding: 18px 0;
+    }
+    .table-row:nth-of-type(odd) {
+      background: #eeeeee;
+    }
+    
+    .table-data,
+    .header__item {
+      flex: 1 1 20%;
+      text-align: center;
+     
+    }
+    
+    .header__item {
+      text-transform: uppercase;
+    }
+    
+    .filter__link {
+      color: white;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .filter__link::after {
+      content: "";
+      position: absolute;
+      right: -18px;
+      color: white;
+      font-size: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .filter__link.desc::after {
+      content: "(desc)";
+    }
+    .filter__link.asc::after {
+      content: "(asc)";
+    }
+  
+    a{
+  
+      cursor: pointer;
+    }
+  
+    button {
+        padding: 19px 39px 18px 39px;
+        color: #FFF;
+        background-color: #f36e21;
+        font-size: 18px;
+        text-align: center;
+        font-style: normal;
+        border-radius: 5px;
+        width: 100%;
+       
+        
+        
+        margin-bottom: 10px;
+      }
+    </style>
+      
+      
+      <div class="container">
+  
+        <h2 style="text-align: center;">BASIC DETAILS</h2>
+      <div class="table">
+      <div class="table-header">
+        <div class="header__item"><a id="name" class="filter__link filter_link--number">STUDENT ID</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT NAME</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT DOB</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT GENDER</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT DISTRICT</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT MOBILE NO</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT EMAIL</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT AADHAR</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">STUDENT STATE</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">INSTITUTE CODE</a></div>
+  
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">COMMUNITY</a></div>
+        <div class="header__item"><a id="draws" class="filter__link filter_link--number">RELIGION</a></div>
+        <div class="header__item"><a id="losses" class="filter__link filter_link--number">FATHER NAME</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">MOTHER NAME</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">IS DISABLED</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">TYPE OF DISABILITY</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">FATHER PROFESSION</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">MOTHER PROFESSION</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">FATHER INCOME</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">MARITAL STATUS</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">LOCALITY</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">CITY</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">STATE</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">PINCODE</a></div>
+              
+  
+      </div>
+      <div class="table-content">	
+        <div class="table-row">		
+          
+          <div class="table-data">{{studentId}}</div>
+          <div class="table-data">{{studentName}}</div>
+          <div class="table-data">{{studentDOB}}</div>
+          <div class="table-data">{{studentGender}}</div>
+          <div class="table-data">{{studentDistrict}}</div>
+          <div class="table-data">{{studentMobileNo}}</div>
+          <div class="table-data">{{studentEmail}}</div>
+          <div class="table-data">{{studentAadhar}}</div>
+          <div class="table-data">{{studentState}}</div>
+          <div class="table-data">{{instituteCode}}</div>
+         <div class="table-data">{{community}}</div>
+          <div class="table-data">{{religion}}</div>
+          <div class="table-data">{{fatherName}}</div>
+                  <div class="table-data">{{motherName}}</div>
+                  <div class="table-data">{{isDisabled}}</div>
+                  <div class="table-data">{{typeOfDisability}}</div>
+          <div class="table-data">{{fatherProfession}}</div>
+          <div class="table-data">{{motherProfession}}</div>
+                  <div class="table-data">{{fatherIncome}}</div>
+                  <div class="table-data">{{maritalStatus}}</div>
+                  <div class="table-data">{{locality}}</div>
+          <div class="table-data">{{city}}</div>
+          <div class="table-data">{{state}}</div>
+          <div class="table-data">{{pincode}}</div>
+                
+                  
+        </div>
+      
+      </div>	
+    </div>
+  
+        
+        <h2 style="text-align: center;">ACADEMIC DETAILS</h2>
+      <div class="table">
+        <div class="table-header">
+          <div class="header__item"><a id="name" class="filter__link filter_link--number">Student Id</a></div>
+          <div class="header__item"><a id="wins" class="filter__link filter_link--number">INSTITUTION NAME</a></div>
+          <div class="header__item"><a id="draws" class="filter__link filter_link--number">PRESENT COURSE</a></div>
+          <div class="header__item"><a id="losses" class="filter__link filter_link--number">PRESENT COURSE YEAR</a></div>
+                <div class="header__item"><a id="total" class="filter__link filter_link--number">MODE OF STUDY</a></div>
+                <div class="header__item"><a id="total" class="filter__link filter_link--number">CLASS START DATE</a></div>
+                <div class="header__item"><a id="total" class="filter__link filter_link--number">UNIVERSITY NAME</a></div>
+                <div class="header__item"><a id="wins" class="filter__link filter_link--number">PREVIOUS COURSE</a></div>
+                <div class="header__item"><a id="draws" class="filter__link filter_link--number">PREVIOUS PASSING YEAR</a></div>
+                <div class="header__item"><a id="losses" class="filter__link filter_link--number">PREVIOUS CLASS PRCENTAGE</a></div>
+                      <div class="header__item"><a id="total" class="filter__link filter_link--number">1Oth ROLL NO</a></div>
+                      <div class="header__item"><a id="total" class="filter__link filter_link--number">10th BOARD NAME</a></div>
+                      <div class="header__item"><a id="total" class="filter__link filter_link--number">10th PASSING YEAR</a></div>
+                      <div class="header__item"><a id="wins" class="filter__link filter_link--number">10th MARKS</a></div>
+                      <div class="header__item"><a id="draws" class="filter__link filter_link--number">12th Roll NO</a></div>
+                      <div class="header__item"><a id="losses" class="filter__link filter_link--number">12th BOARD NAME</a></div>
+                            <div class="header__item"><a id="total" class="filter__link filter_link--number">12th PASSING YEAR</a></div>
+                            <div class="header__item"><a id="total" class="filter__link filter_link--number">12th MARKS</a></div>
+                            <div class="header__item"><a id="total" class="filter__link filter_link--number">ADMISSION FEE</a></div>
+                            <div class="header__item"><a id="total" class="filter__link filter_link--number">TUTION FEE</a></div>
+                            <div class="header__item"><a id="total" class="filter__link filter_link--number">OTHER FEE</a></div>
+  
+        </div>
+  
+       <div class="table-content">	
+          <div class="table-row">	
+            <div class="table-data">{{studentId}}</div>	
+            <div class="table-data">{{institutionName}}</div>
+            <div class="table-data">{{presentCourse}}</div>
+            <div class="table-data">{{presentCourseYear}}</div>
+            <div class="table-data">{{modeOfStudy}}</div>
+                    <div class="table-data">{{classStartDate}}</div>
+                    <div class="table-data">{{universityName}}</div>
+                    <div class="table-data">{{previousCourse}}</div>
+                    <div class="table-data">{{previousYear}}</div>
+                    <div class="table-data">{{previousPassingYear}}</div>
+                    <div class="table-data">{{previousClassPercentage}}</div>
+                    <div class="table-data">{{tenthrollNo}}</div>
+                            <div class="table-data">{{tenthboardName}}</div>
+                            <div class="table-data">{{tenthpassingYear}}</div>
+                            <div class="table-data">{{tenthmarks}}</div>
+                            <div class="table-data">{{twelthrollNo}}</div>
+                            <div class="table-data">{{twelthboardName}}</div>
+                            <div class="table-data">{{twelthpassingYear}}</div>
+                            <div class="table-data">{{twelthmarks}}</div>
+                            <div class="table-data">{{admissionFee}}</div>
+                            <div class="table-data">{{tutionFee}}</div>
+                            <div class="table-data">{{otherFee}}</div>
+                    
+        
+        </div>	
+      </div>
+    
+  
+    
+        
+      
+  
+        
+      <h2 style="text-align: center;">BANK DETAILS</h2>
+    <div class="table">
+      <div class="table-header">
+        <div class="header__item"><a id="name" class="filter__link filter_link--number">STUDENT ID</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">ACCOUNT NO</a></div>
+        <div class="header__item"><a id="draws" class="filter__link filter_link--number">BANK NAME</a></div>
+        <div class="header__item"><a id="losses" class="filter__link filter_link--number">IFSC CODE</a></div>
+        
+      </div>
+      <div class="table-content">	
+        <div class="table-row">		
+          <div class="table-data">{{studentId}}</div>
+          <div class="table-data">{{accountNo}}</div>
+          <div class="table-data">{{bankName}}</div>
+          <div class="table-data">{{ifscCode}}</div>
+                  
+        </div>
+      
+      </div>	
+    </div>
+  
+  
+  
+        
+      <h2 style="text-align: center;">DOCUMENT DETAILS</h2>
+    <div class="table">
+      <div class="table-header">
+        <div class="header__item"><a id="name" class="filter__link">STUDENT ID</a></div>
+        <div class="header__item"><a id="wins" class="filter__link filter_link--number">DOMICILE CERTIFICATE</a></div>
+        <div class="header__item"><a id="draws" class="filter__link filter_link--number">STUDENT PHOTOGRAPH</a></div>
+        <div class="header__item"><a id="losses" class="filter__link filter_link--number">INSTITUTE ID</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">CASTE CERTIFICATE</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">FEE RECIPT</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">BANK PASSBOOK</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">AADHAR CARD</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">Tenth MARKSHEET</a></div>
+              <div class="header__item"><a id="total" class="filter__link filter_link--number">Twelth MARKSHEET</a></div>
+             
+      </div>
+      <div class="table-content">	
+        <div class="table-row">		
+          <div class="table-data">{{studentId}}</div>
+          <div class="table-data">{{domicileCertificate}}</div>
+          <div class="table-data">{{studentPhotograph}}</div>
+          <div class="table-data">{{instituteId}}</div>
+                  <div class="table-data">{{casteCertificate}}</div>
+                  <div class="table-data">{{feeRecipt}}</div>
+                  <div class="table-data">{{bankPassbook}}</div>
+                  <div class="table-data">{{aadharCard}}</div>
+                  <div class="table-data">{{tenthMarksheet}}</div>
+                  <div class="table-data">{{twelthMarksheet}}</div>
+                 
+                  
+        </div>
+      
+      </div>	
+    </div>
+  
+    <button 
+  
+    *ngIf="isApproved1"
+    style="margin-right: 20px;"
+    
+    type="button"
+    (click) = "onApproval()"
+    
+  
+    >
+   APPROVE
+  </button>  
+  
+  <button *ngIf="!isApproved2"
+    style="margin-right: 20px;"
+    
+    type="button"
+    
+    
+  
+    >
+   APPROVED
+  </button>
+  
+  <button
+  
+    *ngIf="!isRejected1"
+    style="margin-right: 20px;"
+    
+    type="button"
+    
+    
+  
+    >
+   REJECTED
+  </button>
+  
+  <button 
+  
+  style="margin-right: 20px;"
+  
+  type="button"
+  (click) = "onRejection()"
+  *ngIf="isRejected2"
+  
+  >
+  REJECT
+  </button> 
+  </div>
+  
+  
+  
+

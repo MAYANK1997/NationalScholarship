@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { AuthService, AuthResponseData } from './auth.service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-auth',
@@ -39,7 +40,7 @@ export class AuthComponent {
 
     authObs.subscribe(
       resData => {
-        console.log(resData);
+        alert(JSON.stringify(resData));
         this.isLoading = false;
         this.router.navigate(['/ministerdashboard']);
       },
