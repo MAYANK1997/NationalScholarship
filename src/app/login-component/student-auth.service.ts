@@ -14,22 +14,22 @@ export interface AuthResponseData {
   expiresIn: string;
   localId: string;
   Registered ?:boolean
-	 	role:string
-	  roleId:number
-    password:string
-	  studentId:number
-	  instituteApprovalStatus:boolean
-	  nadalApprovalStatus:boolean
-	  ministryApprovalStatus:boolean
-	  studentName:string
-    studentDOB:Date
-      studentGender:string
-	  studentDistrict:string
-	  studentMobileNo:any
-	  studentEmail:string
-	  studentaadhar:string
-	  studentState:string
-	  instituteCode:string
+	role:string;
+	roleId:number;
+  password:string;
+	studentId:number;
+	instituteApprovalStatus:boolean;
+	nadalApprovalStatus:boolean;
+	ministryApprovalStatus:boolean;
+	 studentName:string;
+    studentDOB:Date;
+      studentGender:string;
+	  studentDistrict:string;
+	  studentMobileNo:any;
+	  studentEmail:string;
+	  studentaadhar:string;
+	  studentState:string;
+	  instituteCode:string;
   
 }
 
@@ -37,7 +37,7 @@ export interface AuthResponseData {
 export class AuthService3 {
   user1 = new BehaviorSubject<User>(null);
   private tokenExpirationTimer: any;
-
+  
   constructor(private http: HttpClient, private router: Router) {}
 
   signup(email:string, password:string, studentName:string, studentDOB:Date, studentGender:string, studentDistrict:string, studentMobileNo:string, studentEmail:string, studentaadhar:string, studentState:string) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthResponseData } from "../login-component/student-auth.service";
 
 @Component({
   selector: 'app-student-dashboard-component',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentDashboardComponentComponent implements OnInit {
 
+
+  AuthResponseData;
   constructor() { }
 
   ngOnInit(): void {
