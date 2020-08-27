@@ -14,6 +14,7 @@ export class InstituteLoginComponentComponent {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+ 
 
   constructor(private authService: AuthService2, private router: Router) {}
 
@@ -65,6 +66,7 @@ onSubmit(form:NgForm){
     authObs.subscribe(
       resData => {
         console.log(resData);
+        localStorage.setItem('instituteDetails', JSON.stringify(resData));
         this.isLoading = false;
         this.router.navigate(['/institutedashboard']);
       },

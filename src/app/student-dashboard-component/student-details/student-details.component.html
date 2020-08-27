@@ -104,7 +104,7 @@
     </div>	
   </div>
 </div>
-<div class="container" *ngIf="isApplied" style="margin-top:-400px;">
+<div class="container"  style="margin-top:-400px;">
     
   <h2 style="text-align: center;">SCHOLARSHIP STATUS</h2>
 <div class="table">
@@ -113,14 +113,16 @@
     <div class="header__item"><a id="wins" class="filter__link filter__link--number">INSTITUTE STATUS</a></div>
     <div class="header__item"><a id="draws" class="filter__link filter__link--number">NODAL OFFICER STATUS</a></div>
     <div class="header__item"><a id="losses" class="filter__link filter__link--number">MINISTRY STATUS</a></div>
+    <div class="header__item"><a id="losses" class="filter__link filter__link--number">SCHOLARSHIP FINAL STATUS </a></div>
         
   </div>
   <div class="table-content">	
     <div class="table-row">		
       <div class="table-data">{{statusId}}</div>
-      <div class="table-data">{{instituteApprovalStatus}}</div>
-      <div class="table-data">{{nodalOfficerApprovalStatus}}</div>
-      <div class="table-data">{{ministryOfficerApprovalStatus}}</div>
+      <div class="table-data">{{instituteApprovalStatusDes}}</div>
+      <div class="table-data">{{nodalOfficerApprovalStatusDes}}</div>
+      <div class="table-data">{{ministryOfficerApprovalStatusDes}}</div>
+      <div class="table-data">{{scholarshipStatusDesc}}</div>
              
     </div>
   

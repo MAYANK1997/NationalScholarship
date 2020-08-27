@@ -60,7 +60,7 @@ onSubmit(form:NgForm){
 
     authObs.subscribe(
       resData => {
-        alert(JSON.stringify(resData));
+        console.log(JSON.stringify(resData));
         localStorage.setItem('applicationDetails', JSON.stringify(resData));
         this.isLoading = false;
         this.router.navigate(['/studentdashboard']);

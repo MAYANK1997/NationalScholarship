@@ -58,7 +58,7 @@ export class AuthService3 {
           studentEmail:studentEmail, 
           studentaadhar:studentaadhar, 
           studentState:studentState,
-          instituteCode:10102
+          instituteCode:JSON.parse(localStorage.getItem('instituteDetails')).personalId
 
         }
       )

@@ -34,7 +34,7 @@ export class HeaderComponentComponent implements OnInit, OnDestroy {
 
     this.userSub = this.authService2.user1.subscribe(user1 => {
      
-      if(user1.email==="aa@gmail.com"){
+      if(user1.email==="lpu@gmail.com"){
         this.isAuthenticated = !!user1;
         console.log(!user1);
         console.log(!!user1);
@@ -45,7 +45,7 @@ export class HeaderComponentComponent implements OnInit, OnDestroy {
     
 
     this.userSub = this.authService1.user.subscribe(user => {
-      if(user.email==="aaw@gmail.com"){
+      if(user.email==="nodal@gmail.com"){
       this.isAuthenticated = !!user;
       console.log(!user);
       console.log(!!user);
@@ -54,7 +54,7 @@ export class HeaderComponentComponent implements OnInit, OnDestroy {
 
     
     this.userSub = this.authService.user1.subscribe(user1 => {
-      if(user1.email==="mayankpabb@gmail.com"){
+      if(user1.email==="minister@gmail.com"){
         this.isAuthenticated = !!user1;
         console.log(user1.email);
         console.log(!!user1);

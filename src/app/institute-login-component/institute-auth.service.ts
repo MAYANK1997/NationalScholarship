@@ -14,6 +14,7 @@ export interface AuthResponseData {
   expiresIn: string;
   localId: string;
   Registered ?:boolean;
+  personalId:number;
   
 }
 

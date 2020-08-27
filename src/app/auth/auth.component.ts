@@ -40,7 +40,7 @@ export class AuthComponent {
 
     authObs.subscribe(
       resData => {
-        alert(JSON.stringify(resData));
+        console.log(JSON.stringify(resData));
         this.isLoading = false;
         this.router.navigate(['/ministerdashboard']);
       },

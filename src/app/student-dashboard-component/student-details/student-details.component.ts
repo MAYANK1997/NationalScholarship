@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { observable, Observable } from 'rxjs';
   templateUrl: './student-details.component.html',
   styleUrls: ['./student-details.component.css']
 })
-export class StudentDetailsComponent {
+export class StudentDetailsComponent implements OnInit {
 
   isLoading = false;
   serialNumber: number = 1;
@@ -25,19 +25,83 @@ export class StudentDetailsComponent {
   isApplied: boolean;
   isStatus: boolean = false;
   statusId: number = 1234;
-  instituteApprovalStatus: string = "Pending";
-  nodalOfficerApprovalStatus: string = "Pending";
-  ministryOfficerApprovalStatus: string = "Pending";
-
+  instituteApprovalStatus: boolean;
+  nodalOfficerApprovalStatus: boolean;
+  ministryOfficerApprovalStatus: boolean;
+  instituteApprovalStatusDes: string;
+  nodalOfficerApprovalStatusDes: string;
+  ministryOfficerApprovalStatusDes: string;
+  scholarshipStatusDesc:string;
 
 
   constructor(private http: HttpClient, private router: Router) { }
+  
+  ngOnInit(): void {
+    
+    this.fetchStatus();
 
+
+  }
+
+
+  
   apply() {
     this.toApply = !this.toApply;
 
   }
 
+
+  fetchStatus(){
+    this.http.get('http://localhost:8585/getOwnApplicationStudentStatus?personalId='+JSON.parse(localStorage.getItem('applicationDetails')).personalId).subscribe(posts=>{
+
+    console.log(this.instituteApprovalStatus = posts[0][2]);
+
+    this.statusId = posts[0][0];
+    this.scholarshipStatusDesc = posts[0][1];
+    this.instituteApprovalStatus = posts[0][2];
+    this.nodalOfficerApprovalStatus = posts[0][3];
+    this.ministryOfficerApprovalStatus = posts[0][4];
+
+    if(this.instituteApprovalStatus==false){
+       
+         this.instituteApprovalStatusDes = "Pending";
+     
+
+    }else{
+
+      this.instituteApprovalStatusDes = "Approved";
+    
+    }
+
+    if(this.nodalOfficerApprovalStatus==false){
+     
+      this.nodalOfficerApprovalStatusDes="Pending";
+      
+ 
+     }else{
+ 
+      
+       this.nodalOfficerApprovalStatusDes="Approved";
+    
+     }
+
+     if(this.ministryOfficerApprovalStatus==false){
+    
+      this.ministryOfficerApprovalStatusDes="Pending";
+ 
+     }else{
+ 
+       this.ministryOfficerApprovalStatusDes="Approved";
+     }
+
+
+     if(this.instituteApprovalStatus){
+                    this.isApplied = true;
+
+     }
+
+  });
+  }
 
   onSubmit(form: NgForm) {
     const community = form.value.community;
@@ -77,23 +141,23 @@ export class StudentDetailsComponent {
     const accountNo = form.value.accountNo;
     const bankName = form.value.bankName;
     const ifscCode = form.value.marks_tenth;
-    let email:string = JSON.parse(localStorage.getItem('applicationDetails')).email;
-    let role: string = JSON.parse(localStorage.getItem('applicationDetails')).role;
-    let roleId: number= JSON.parse(localStorage.getItem('applicationDetails')).roleId;
-    let password: string= JSON.parse(localStorage.getItem('applicationDetails')).password;
-    let studentId: number= JSON.parse(localStorage.getItem('applicationDetails')).studentId;
-    let instituteApprovalStatus: boolean= JSON.parse(localStorage.getItem('applicationDetails')).instituteApprovalStatus;
-    let nadalApprovalStatus: boolean= JSON.parse(localStorage.getItem('applicationDetails')).nadalApprovalStatus;
-    let ministryApprovalStatus: boolean= JSON.parse(localStorage.getItem('applicationDetails')).ministryApprovalStatus;
-    let studentName: string= JSON.parse(localStorage.getItem('applicationDetails')).studentName;
-    let studentDOB: Date= JSON.parse(localStorage.getItem('applicationDetails')).studentDOB;
-    let studentGender: string= JSON.parse(localStorage.getItem('applicationDetails')).studentGender;
-    let studentDistrict: string= JSON.parse(localStorage.getItem('applicationDetails')).studentDistrict;
-    let studentMobileNo: number= JSON.parse(localStorage.getItem('applicationDetails')).studentMobileNo;
-    let studentEmail: string= JSON.parse(localStorage.getItem('applicationDetails')).studentEmail;
-    let studentaadhar: string= JSON.parse(localStorage.getItem('applicationDetails')).studentaadhar;
-    let studentState: string= JSON.parse(localStorage.getItem('applicationDetails')).studentState;
-    let instituteCode: number= 10121;
+    const email:string = JSON.parse(localStorage.getItem('applicationDetails')).email;
+    const role: string = JSON.parse(localStorage.getItem('applicationDetails')).role;
+    const roleId: number= 4
+    const password: string= "abc@123"
+    const studentId: number= JSON.parse(localStorage.getItem('applicationDetails')).personalId;
+    const instituteApprovalStatus: boolean= false;
+    const nadalApprovalStatus: boolean= false;
+    const ministryApprovalStatus: boolean= false;
+    const studentName: string= JSON.parse(localStorage.getItem('applicationDetails')).studentName;
+    const studentDOB: Date= JSON.parse(localStorage.getItem('applicationDetails')).studentDOB;
+    const studentGender: string= JSON.parse(localStorage.getItem('applicationDetails')).studentGender;
+    const studentDistrict: string= JSON.parse(localStorage.getItem('applicationDetails')).studentDistrict;
+    const studentMobileNo: number= JSON.parse(localStorage.getItem('applicationDetails')).studentMobileNo;
+    const studentEmail: string= JSON.parse(localStorage.getItem('applicationDetails')).studentEmail;
+    const studentaadhar: string= JSON.parse(localStorage.getItem('applicationDetails')).studentaadhar;
+    const studentState: string= JSON.parse(localStorage.getItem('applicationDetails')).studentState;
+    const instituteCode: number= JSON.parse(localStorage.getItem('instituteDetails')).personalId;
     
     this.isLoading = true;
 
@@ -121,7 +185,6 @@ export class StudentDetailsComponent {
 
 
     form.reset();
-
 
 
   }

@@ -7,12 +7,22 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./student-details-list.component.css']
 })
 export class StudentDetailsListComponent implements OnInit {
-
+  
+  statusId: number = 1234;
+  instituteApprovalStatus: boolean;
+  nodalOfficerApprovalStatus: boolean;
+  ministryOfficerApprovalStatus: boolean;
+  instituteApprovalStatusDes: string;
+  nodalOfficerApprovalStatusDes: string;
+  ministryOfficerApprovalStatusDes: string;
+  scholarshipStatusDesc:string;
+  nadalApprovalStatus:boolean;
+  
   institutionName:string = "UPES";
   presentCourse:string="B.Tech";
-  presentCourseYear:number=2016;
+  presentCourseYear:number=200;
   modeOfStudy:string="Virtual";
-  classStartDate:string="1/10/2016";
+  classStartDate:string="1/10/200";
   universityName:string="DU"
   previousCourse:string="12th"
   previousYear:number=2015;
@@ -24,7 +34,7 @@ export class StudentDetailsListComponent implements OnInit {
   tenthMarks:number=86
   twelthRollNo:string="98765";
   twelthboardName:string="CBSE";
-  twelthpassingYear:number=2016;
+  twelthpassingYear:number=200;
   twelthmarks:number=90;
   admissionFee:number=83372;
   tutionFee:number=933678;
@@ -83,131 +93,220 @@ export class StudentDetailsListComponent implements OnInit {
   
   constructor(private http: HttpClient) { }
 
+ 
   ngOnInit() {
     this.fetchDetails();
+    this.fetchStatus();
+
+    
   }
 
   fetchDetails(){
-    this.http.get('http://localhost:8585/readStudentAllApplications').subscribe(posts=>{
+    let instituteCode = JSON.parse(localStorage.getItem('instituteDetails')).personalId;
+    this.http.get('http://localhost:8585/instituteReadStudentAllApplications?instituteCode='+instituteCode).subscribe(posts=>{
+     
       let i=0;
-      this.studentId=posts[16][i];
+      
+    
+      this.studentName=posts[0][i];
       i=i+1;
-      this.studentName=posts[16][i];
-      i=i+1;
-      this.studentDOB=posts[16][i];
+      this.studentDOB=posts[0][i];
 
       i=i+1;
-      this.studentGender=posts[16][i];
+      this.studentGender=posts[0][i];
       
       i=i+1;
-      this.studentMobileNo=posts[16][i];
+      this.studentMobileNo=posts[0][i];
       i=i+1;
-      this.studentEmail=posts[16][i];
+      this.studentEmail=posts[0][i];
       i=i+1;
-      this.studentAadhar=posts[16][i];
+      this.studentAadhar=posts[0][i];
       i=i+1;
-      this.studentState=posts[16][i];
+      this.studentState=posts[0][i];
       i=i+1;
-      this.studentDistrict=posts[16][i];
+      this.studentDistrict=posts[0][i];
       i=i+1;
 
 
 
-      
-      this.institutionName=posts[16][i];
+
+      this.institutionName=posts[0][i];
       i=i+1;
-      this.presentCourse=posts[16][i];
+      this.presentCourse=posts[0][i];
       i=i+1;
-      this.presentCourseYear=posts[16][i];
+      this.presentCourseYear=posts[0][i];
       i=i+1;
-      this.modeOfStudy=posts[16][i];
+      this.modeOfStudy=posts[0][i];
       i=i+1;
-      this.classStartDate=posts[16][i];
+      this.classStartDate=posts[0][i];
       i=i+1;
-      this.universityName=posts[16][i];
+      this.universityName=posts[0][i];
       i=i+1;
-      this.previousCourse=posts[16][i];
+      this.previousCourse=posts[0][i];
       i=i+1;
-      this.previousYear=posts[16][i];
+      this.previousYear=posts[0][i];
       i=i+1;
-      this.previousPassingYear=posts[16][i];
+      this.previousPassingYear=posts[0][i];
       i=i+1;
-      this.tenthRollNo=posts[16][i];
-      i=i+1;
-      
-      this.tenthBoardName=posts[16][i];
+      this.tenthRollNo=posts[0][i];
       i=i+1;
       
-      this.tenthPassingYear=posts[16][i];
+      this.tenthBoardName=posts[0][i];
       i=i+1;
-      this.tenthMarks=posts[16][i];
+      
+      this.tenthPassingYear=posts[0][i];
       i=i+1;
-      this.twelthRollNo=posts[16][i];
+      this.tenthMarks=posts[0][i];
       i=i+1;
-      this.twelthboardName=posts[16][i];
+      this.twelthRollNo=posts[0][i];
       i=i+1;
-      this.twelthpassingYear=posts[16][i];
+      this.twelthboardName=posts[0][i];
       i=i+1;
-      this.twelthmarks=posts[16][i];
+      this.twelthpassingYear=posts[0][i];
       i=i+1;
-      this.admissionFee=posts[16][i];
+      this.twelthmarks=posts[0][i];
       i=i+1;
-      this.tutionFee=posts[16][i];
+      this.admissionFee=posts[0][i];
       i=i+1;
-      this.otherFee=posts[16][i];
+      this.tutionFee=posts[0][i];
+      i=i+1;
+      this.otherFee=posts[0][i];
       i=i+4;
-      this.community=posts[16][i];
+      this.community=posts[0][i];
       i=i+1;
-      this.religion=posts[16][i];
+      this.religion=posts[0][i];
       i=i+1;
-      this.fatherName=posts[16][i];
+      this.fatherName=posts[0][i];
       i=i+1;
-      this.motherName=posts[16][i];
+      this.motherName=posts[0][i];
       i=i+1;
-      this.isDisabled=posts[16][i];
+      this.isDisabled=posts[0][i];
       i=i+1;
-      this.typeOfDisability=posts[16][i];
+      this.typeOfDisability=posts[0][i];
       i=i+1;
-      this.fatherProfession=posts[16][i];
+      this.fatherProfession=posts[0][i];
       i=i+1;
-      this.motherProfession=posts[16][i];
+      this.motherProfession=posts[0][i];
       i=i+1;
-      this.fatherIncome=posts[16][i];
+      this.fatherIncome=posts[0][i];
       i=i+1;
-      this.maritalStatus=posts[16][i];
+      this.maritalStatus=posts[0][i];
       i=i+1;
-      this.locality=posts[16][i];
+      this.locality=posts[0][i];
       i=i+1;
-      this.city=posts[16][i];
+      this.city=posts[0][i];
       i=i+1;
-      this.state=posts[16][i];
+      this.state=posts[0][i];
       i=i+1;
-      this.pincode=posts[16][i];
+      this.pincode=posts[0][i];
       i=i+1;
-      this.accountNo=posts[16][i];
+      this.accountNo=posts[0][i];
       i=i+1;
-      this.bankName=posts[16][i];
+      this.bankName=posts[0][i];
       i=i+1;
-      this.ifscCode=posts[16][i];
+      this.ifscCode=posts[0][i];
 
       
     
     });
   }
 
+  fetchStatus(){
+    this.http.get('http://localhost:8585/getOwnApplicationStudentStatus?personalId='+JSON.parse(localStorage.getItem('applicationDetails')).personalId).subscribe(posts=>{
 
-   onApproval(){
+    console.log(this.instituteApprovalStatus = posts[0][2]);
+
+    this.statusId = posts[0][0];
+    this.scholarshipStatusDesc = posts[0][1];
+    this.instituteApprovalStatus = posts[0][2];
+    this.nodalOfficerApprovalStatus = posts[0][3];
+    this.ministryOfficerApprovalStatus = posts[0][4];
+
+    if(this.instituteApprovalStatus==false){
+       
+         this.instituteApprovalStatusDes = "Pending";
+     
+
+    }else{
+
+      this.instituteApprovalStatusDes = "Approved";
+    
+    }
+
+    if(this.nodalOfficerApprovalStatus==false){
+     
+      this.nodalOfficerApprovalStatusDes="Pending";
+      
+ 
+     }else{
+ 
+      
+       this.nodalOfficerApprovalStatusDes="Approved";
+    
+     }
+
+     if(this.ministryOfficerApprovalStatus==false){
+    
+      this.ministryOfficerApprovalStatusDes="Pending";
+ 
+     }else{
+ 
+       this.ministryOfficerApprovalStatusDes="Approved";
+     }
+
+
+
+     
+
+  });
+  }
+
+
+  onApproval(){
+
+    this.http.post('http://localhost:8585/NodalUpdatesStudentStatus',
+
+      {
+         nadalApprovalStatus:true,
+         studentId:JSON.parse(localStorage.getItem('applicationDetails')).personalId
+       
+
+      }
+
+
+    ).subscribe(respnseDate => {
+
+      console.log(respnseDate);
+    
+
+    });
      this.isApproved1 = false;
      this.isRejected1 = true;
      this.isRejected2 = false;
      this.isApproved2 = false;
-
-
+     
+    
 
    }
 
    onRejection(){
     
+    this.http.post('http://localhost:8585/NodalUpdatesStudentStatus',
+
+      {
+         nadalApprovalStatus:false,
+         studentId:JSON.parse(localStorage.getItem('applicationDetails')).personalId
+       
+
+      }
+
+
+    ).subscribe(respnseDate => {
+
+      console.log(respnseDate);
+    
+
+    });
     this.isApproved1 = false;
     this.isApproved2 = true;
     this.isRejected1 = false;
